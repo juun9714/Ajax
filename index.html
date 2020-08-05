@@ -6,6 +6,8 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="colors.js"></script>
   <script>
+
+    //리스트에 있는 페이지 article 태그로 가져오기
     function takePage(name){
       fetch(name).then(function(response){
         response.text().then(function(text){
@@ -14,18 +16,24 @@
         })
     }
 
+    //리스트 nav 아이디로 가져오기 
+    fetch('list').then(function(response){
+        response.text().then(function(text){
+          document.querySelector('#nav').innerHTML=text;
+          })
+        })
+
+
   </script>
 </head>
 <body>
   <h1><a href="#!welcome" onclick="takePage('welcome')">WEB</a></h1>
-  <input id="night_day" type="button" value="night" onclick="
-    nightDayHandler(this);
-  ">
-  <ol>
-    <li><a href="#!html" onclick="takePage('html')">HTML</a></li>
-    <li><a href="#!css" onclick="takePage('css')">CSS</a></li>
-    <li><a href="#!javascript" onclick="takePage('javascript')">JavaScript</a></li>
+  <input id="night_day" type="button" value="night" onclick="nightDayHandler(this);">
+
+  <ol id="nav">
+    
   </ol>
+  
   <article>
 
   </article>
