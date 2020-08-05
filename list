@@ -1,4 +1,1 @@
-<li><a href="#!html" onclick="takePage('html')">HTML</a></li>
-<li><a href="#!css" onclick="takePage('css')">CSS</a></li>
-<li><a href="#!javascript" onclick="takePage('javascript')">JavaScript</a></li>
-<li><a href="#!ajax" onclick="takePage('ajax')">AJax</a></li>
+HTML,CSS,JavaScript,Ajax

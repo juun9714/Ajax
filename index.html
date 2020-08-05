@@ -19,7 +19,19 @@
     //리스트 nav 아이디로 가져오기 
     fetch('list').then(function(response){
         response.text().then(function(text){
-          document.querySelector('#nav').innerHTML=text;
+          //<li><a href="#!html" onclick="takePage('html')">HTML</a></li>
+          var items=text.split(',');
+          var tags='';
+          var i=0;
+
+          while(i<items.length){
+            var item=items[i];
+            console.log('item is '+item)
+            var tag='<li><a href="#!'+item+'" onclick="takePage(\''+item+'\')">'+item+'</a></li>'
+            tags=tags+tag;
+            i++;
+          }
+          document.querySelector('#nav').innerHTML=tags;
           })
         })
 
@@ -31,11 +43,10 @@
   <input id="night_day" type="button" value="night" onclick="nightDayHandler(this);">
 
   <ol id="nav">
-    
-  </ol>
-  
-  <article>
 
+  </ol>
+
+  <article>
   </article>
 </body>
 </html>
